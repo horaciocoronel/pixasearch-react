@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Search extends Component {
   render() {
     return (
-      <div>
-        Search
+      <div className="search">
+        <input type="text" placeholder="Search image" />
       </div>
     )
   }
