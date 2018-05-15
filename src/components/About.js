@@ -9,7 +9,7 @@ export class About extends Component {
         <div className="about-content">
           <div className="about-top">
             <p>
-              PixaSearch is an image search app built in React and powered by Pixabay API.
+              PixaSearch is an image search app made in React and powered by Pixabay API.
             </p>
           </div>
           <div className="about-bottom">
