@@ -11,7 +11,7 @@ export class Search extends Component {
         /><span> PixaSearch</span>
       </div>
       <div className="right">
-        <input type="text" placeholder="Search image" />
+        <input type="text" placeholder="Search image" onChange={this.props.getQuery} />
         <img src={menuIcon} alt="menu-icon" onClick={this.props.toggleAbout} />
       </div>
       </div>
