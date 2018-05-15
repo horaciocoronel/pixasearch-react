@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
 
 export class Thumbnails extends Component {
+
+  onImageClick = (e) => {
+    console.log(this.props.location);
+    this.props.setCurrentImage(this.props.location)
+  }
+  
+
   render() {
     return (
-      <div className="thumbnails">
-        Thumbnails
-      </div>
+      
+        <div className="thumbnail"
+        onClick={this.onImageClick}
+        location={this.props.location}
+        style={{backgroundImage: `url(${this.props.thumbUrl})`}}>
+        </div> 
     )
   }
 }
