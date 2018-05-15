@@ -96,7 +96,35 @@ input {
 .about {
   z-index: 999;
   position: absolute;
-  top: 85px;
+  top: 84px;
   width: 100%;
-  background-color: #e3e3e3;
+  background-color: #fff;
+}
+
+.about-content {
+  /* padding: 0 30px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-bottom {
+  padding: 0 20px;
+}
+.about-bottom span {
+  font-size: 12px;
+  font-weight: 800;
+}
+.about-bottom img {
+  width: 18px;
+}
+
+.about-top {
+  padding: 0 20px;
+}
+
+.about-top p {
+  font-size: 16px;
+  padding: auto 20px;
 }
