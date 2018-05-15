@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       images: images.hits,
       currentImage: images.hits[14].largeImageURL,
+      pixabayURL: images.hits[14].pageURL,
       height: 0,
       query: ''
     }
@@ -21,7 +22,7 @@ class App extends Component {
   toggleAbout = () => {
     const { height } = this.state;
     this.setState({
-      height: height === 0 ? 200 : 0,
+      height: height === 0 ? 120 : 0,
     });
   }
 
@@ -35,7 +36,10 @@ class App extends Component {
   
 
   setCurrentImage = (e) => {
-    this.setState({currentImage: this.state.images[`${e}`].largeImageURL})
+    this.setState({
+      currentImage: this.state.images[`${e}`].largeImageURL,
+      pixabayURL: this.state.images[`${e}`].pageURL
+    })
   }
   
   
@@ -46,7 +50,7 @@ class App extends Component {
     .then(
       (result) => {
         // If the result is equal to 20 set the state
-        if (result.hits.length === 20) {
+        if (result.hits.length > 0) {
           this.setState({
             images: result.hits
           });
@@ -64,11 +68,18 @@ class App extends Component {
       <div className="container">
         <Search toggleAbout={this.toggleAbout} getQuery={this.getQuery}/>
         <MainImage imageUrl={this.state.currentImage} />
-        <Images images={this.state.images} setCurrentImage={this.setCurrentImage}/>
+        <Images 
+          images={this.state.images} 
+          setCurrentImage={this.setCurrentImage}
+          pixabayURL={this.state.pixabayURL}
+        />
         <AnimateHeight
           duration={ 500 }
+          style={{position: 'absolute', top: '84px'}}
           className='about'
+          contentClassName='about-content'
           height={ height }
+          animateOpacity={true}
         >
           <About/>
         </AnimateHeight>
