@@ -64,7 +64,7 @@ input {
   width: 100%;
   flex-grow: 1;
   align-items: stretch;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 200px auto;
   background-color: #e3e3e3;
   background-size: cover;
   background-repeat: no-repeat;
