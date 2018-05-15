@@ -65,24 +65,25 @@ input {
   flex-grow: 1;
   align-items: stretch;
   margin: 0 auto 200px auto;
-  background-color: #e3e3e3;
-  background-size: cover;
+  background-color: #fff;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;  
 }
 
-.main-image img {
-  width: 100%;
-}
+
 
 .thumbnails-list {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .thumbnail {
+  min-width: 10%;
   width: 10%;
   min-height: 70px;
   height: 100px;
@@ -91,22 +92,24 @@ input {
   background-repeat: no-repeat;
   margin: 0 auto;
   float: left;
+  cursor: pointer;
 }
 
 .about {
   z-index: 999;
   position: absolute;
-  top: 84px;
+  padding: 0;
+  margin: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .about-content {
-  /* padding: 0 30px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: stretch;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0);  
 }
 
 .about-bottom {
