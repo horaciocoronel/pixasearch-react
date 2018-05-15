@@ -12,6 +12,7 @@ export class Images extends Component {
           key={image.id}
           setCurrentImage={this.props.setCurrentImage}
           location={index}
+          pixabayURL={this.props.pixabayURL}
         />        
       )
     })
