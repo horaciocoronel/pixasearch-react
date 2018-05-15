@@ -15,10 +15,10 @@ export class About extends Component {
           <div className="about-bottom">
             <span style={{fontWeight: '300'}}>Built by</span> <span>Horacio Coronel</span>
             <p>
-              <a href="https://github.com/horaciocoronel" target="_blank" title="Horacio Coronel Github">
+              <a href="https://github.com/horaciocoronel" target="_blank" rel="noopener noreferrer" title="Horacio Coronel Github">
               <img src={Github} alt="Github Logo"/></a>
               &nbsp;&nbsp;
-              <a href="https://www.linkedin.com/in/horacio-coronel/" target="_blank" title="Horacio Coronel Linkedin">
+              <a href="https://www.linkedin.com/in/horacio-coronel/" target="_blank" rel="noopener noreferrer" title="Horacio Coronel Linkedin">
               <img src={Linkedin} alt="Linkedin Logo"/></a>
             </p>
           </div>
