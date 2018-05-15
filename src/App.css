@@ -9,10 +9,12 @@
   max-width: 1200px;
   position: relative;
   margin: 0 auto;
+  z-index: 0;
 }
 
 input {
-  width: 100%;
+  display: inline-block;
+  width: 90%;
   height: 45px;
   padding: 5px 10px;
   font-size: 15px;
@@ -51,6 +53,13 @@ input {
   width: 75%;
 }
 
+.right img {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  cursor: pointer;
+}
+
 .main-image {
   width: 100%;
   flex-grow: 1;
@@ -82,4 +91,12 @@ input {
   background-repeat: no-repeat;
   margin: 0 auto;
   float: left;
+}
+
+.about {
+  z-index: 999;
+  position: absolute;
+  top: 85px;
+  width: 100%;
+  background-color: #e3e3e3;
 }
