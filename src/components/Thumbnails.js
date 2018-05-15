@@ -2,16 +2,18 @@ import React, { Component } from 'react'
 
 export class Thumbnails extends Component {
 
-  onImageClick = (e) => {
+  onImageMouseOver = (e) => {
     this.props.setCurrentImage(this.props.location)
   }
-  
+  goToPage = () => {
+    window.open(this.props.pixabayURL, '_blank')
+  }
 
   render() {
     return (
         <div className="thumbnail"
-        onClick={this.onImageClick}
-        onMouseOver={this.onImageClick}
+        onClick={this.goToPage}
+        onMouseOver={this.onImageMouseOver}
         style={{backgroundImage: `url(${this.props.thumbUrl})`}}>
         </div> 
     )
