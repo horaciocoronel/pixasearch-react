@@ -28,7 +28,7 @@ class App extends Component {
     // this.setState({showAbout: !this.state.showAbout})
     const { height } = this.state;
     this.setState({
-      height: height === 0 ? 220 : 0,
+      height: height === 0 ? 200 : 0,
     });
     console.log(this.state.height)
   }
