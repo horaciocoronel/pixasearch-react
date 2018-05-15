@@ -13,6 +13,7 @@
 }
 
 input {
+  border: 1px solid #e3e3e3; 
   display: inline-block;
   width: 90%;
   height: 45px;
@@ -131,3 +132,136 @@ input {
   font-size: 16px;
   padding: auto 20px;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+ input {
+  width: 85%;
+  margin-left: 20px;
+  }
+  .thumbnails-list {
+    height: 200px;
+    overflow-y: scroll;
+  }
+  .thumbnail {
+    min-width: 20%;
+  }
+  .main-image {
+    margin: 0 auto 100px auto;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  input {
+   width: 85%;
+   border: 1px solid #e3e3e3; 
+   margin-left: 20px;
+   }
+   .thumbnails-list {
+     height: 200px;
+     overflow-y: scroll;
+   }
+   .thumbnail {
+     min-width: 20%;
+   }
+   .main-image {
+     margin: 0 auto 100px auto;
+   }
+ 
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  input {
+   display: block;
+   width: 75%;
+   margin-top: 40px !important;
+   border: 1px solid #e3e3e3; 
+   margin: 0 auto;
+   }
+   .thumbnails-list {
+     height: 200px;
+     overflow-y: scroll;
+   }
+   .thumbnail {
+     min-width: 20%;
+   }
+   .main-image {
+     margin: 0 auto 100px auto;
+   }
+   .search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .search .right {
+    width: 100%;
+  }
+  .search .left {
+    width: 100%;
+  }
+  .left span {
+    padding-left: 20px;
+    font-size: 27px;
+    top:20%;
+  }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  input {
+    display: block;
+    width: 75%;
+    margin-top: 40px !important;
+    margin: 0 auto;
+    border: 1px solid #e3e3e3; 
+    }
+    .thumbnails-list {
+      height: 250px;
+      overflow-y: scroll;
+    }
+    .thumbnail {
+      min-width: 25%;
+    }
+    .main-image {
+      margin: 0 auto 260px auto;
+    }
+    .search {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     padding: 0;
+     position: relative;
+   }
+   .search .right {
+     width: 100%;
+   }
+   .search .left {
+     width: 100%;
+   }
+   .left span {
+     padding-left: 20px;
+     font-size: 27px;
+     top:20%;
+   }
+  
+}
+
