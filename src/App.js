@@ -12,30 +12,30 @@ class App extends Component {
     this.state = {
       images: images.hits,
       currentImage: images.hits[14].largeImageURL,
-      showAbout: false,
-      height: 0
+      height: 0,
+      query: ''
     }
     this.getImages = this.getImages.bind(this);
-    // this.setCurrentImage = this.setCurrentImage.bind(this);
-  }
-  componentDidMount() {
-    if(this.state.images.keys === null) {
-      this.getImages();
-    }
   }
 
   toggleAbout = () => {
-    // this.setState({showAbout: !this.state.showAbout})
     const { height } = this.state;
     this.setState({
       height: height === 0 ? 200 : 0,
     });
-    console.log(this.state.height)
+  }
+
+  getQuery = (e) => {
+    let searchValue = encodeURIComponent(e.target.value);
+	  if (searchValue !== '' && searchValue.length >= 2) {
+     this.setState({ query: searchValue });
+     this.getImages(searchValue);
+    }
   }
   
 
   setCurrentImage = (e) => {
-    this.setState({currentImage: images.hits[`${e}`].largeImageURL})
+    this.setState({currentImage: this.state.images[`${e}`].largeImageURL})
   }
   
   
@@ -45,9 +45,12 @@ class App extends Component {
     .then(res => res.json())
     .then(
       (result) => {
-        this.setState({
-          images: result.hits
-        });
+        // If the result is equal to 20 set the state
+        if (result.hits.length === 20) {
+          this.setState({
+            images: result.hits
+          });
+        }
       },
       (error) => {
         alert("Couldn't reach the API server")
@@ -59,14 +62,13 @@ class App extends Component {
     const { height } = this.state;
     return (
       <div className="container">
-        <Search toggleAbout={this.toggleAbout} />
-        {console.log(this.state.currentImage)}
+        <Search toggleAbout={this.toggleAbout} getQuery={this.getQuery}/>
         <MainImage imageUrl={this.state.currentImage} />
         <Images images={this.state.images} setCurrentImage={this.setCurrentImage}/>
         <AnimateHeight
           duration={ 500 }
           className='about'
-          height={ height } // see props documentation bellow
+          height={ height }
         >
           <About/>
         </AnimateHeight>
