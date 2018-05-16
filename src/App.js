@@ -22,7 +22,7 @@ class App extends Component {
   toggleAbout = () => {
     const { height } = this.state;
     this.setState({
-      height: height === 0 ? 120 : 0,
+      height: height === 0 ? 130 : 0,
     });
   }
 
@@ -67,11 +67,13 @@ class App extends Component {
     return (
       <div className="container">
         <Search toggleAbout={this.toggleAbout} getQuery={this.getQuery}/>
-        <MainImage imageUrl={this.state.currentImage} />
+        <MainImage 
+          imageUrl={this.state.currentImage} 
+          pixabayURL={this.state.pixabayURL}
+        />
         <Images 
           images={this.state.images} 
           setCurrentImage={this.setCurrentImage}
-          pixabayURL={this.state.pixabayURL}
         />
         <AnimateHeight
           duration={ 500 }
